@@ -1,0 +1,340 @@
+/* Custom Tech Deep Blue & Neon Theme */
+:root {
+    --bg-dark: #070b19;
+    --card-bg: #0f172a;
+    --neon-blue: #00f2fe;
+    --neon-purple: #9d4edd;
+    --neon-green: #00ff87;
+    --neon-pink: #ff007f;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --border-glow: rgba(0, 242, 254, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 2.5rem 1rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Tech Cyber Grid Background Effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Branding Header */
+header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--neon-blue);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+.logo span { color: var(--neon-purple); }
+.logo i { margin-right: 8px; animation: pulse 2s infinite; }
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #00f2fe, #4facfe, #9d4edd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.6rem;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Premium Glass Card Layout */
+.cyber-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--neon-blue);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+label i { margin-right: 8px; }
+
+textarea {
+    width: 100%;
+    height: 140px;
+    background: rgba(5, 8, 22, 0.6);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 1.2rem;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Drag & Drop Upload Zone Layout */
+.upload-zone {
+    border: 2px dashed rgba(157, 77, 221, 0.4);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(5, 8, 22, 0.4);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.upload-zone:hover, .upload-zone.drag-active {
+    border-color: var(--neon-blue);
+    background: rgba(0, 242, 254, 0.03);
+    box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.05);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s;
+}
+.upload-zone:hover .upload-icon {
+    transform: translateY(-8px);
+}
+
+.upload-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+.upload-text b { color: var(--neon-blue); }
+
+.file-status-tag {
+    margin-top: 15px;
+    background: rgba(0, 255, 135, 0.1);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    animation: fadeIn 0.4s ease;
+}
+
+/* High-Energy Glow Button */
+.btn-submit {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(157, 77, 221, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+    letter-spacing: 1.5px;
+}
+
+/* Matrix Processing Loader */
+.loading-wrapper {
+    text-align: center;
+    padding: 3rem 0;
+    display: none;
+}
+
+
+.pulse-loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(0, 242, 254, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--neon-pink);
+    border-bottom-color: var(--neon-blue);
+    margin: 0 auto 1.5rem;
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.loading-wrapper p {
+    color: var(--neon-pink);
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: blink 1.5s infinite;
+}
+
+/* Multi-Feature Results Matrix Dashboard Layout */
+.matrix-results {
+    display: none;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-results h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.6rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+/* ATS Circle Progress Framework */
+.radial-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+}
+
+.circle-container {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--card-bg) 78%, transparent 80% 100%), 
+                conic-gradient(var(--neon-blue) 0%, rgba(255,255,255,0.06) 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
+    transition: all 0.5s ease;
+}
+
+.circle-container span {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+/* Modern Custom Badges and Smart Tags */
+.tags-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.2rem;
+}
+
+.tags-list li {
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tags-list.negative li {
+    background: rgba(255, 0, 127, 0.08);
+    border: 1px solid rgba(255, 0, 127, 0.3);
+    color: #ff5599;
+}
+
+.tags-list.positive li {
+    background: rgba(0, 255, 135, 0.08);
+    border: 1px solid rgba(0, 255, 135, 0.3);
+    color: var(--neon-green);
+}
+
+/* Custom Dynamic Feedback Callouts */
+.panel-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(5, 8, 22, 0.5);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #fff;
+}
+
+.panel-box.alert { border-left-color: #ffb703; }
+.panel-box.success { border-left-color: var(--neon-green); }
+.panel-box h4 { font-size: 1.1rem; margin-bottom: 0.4rem; color: #fff;}
+.panel-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+/* Animation Framework Configurations */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }

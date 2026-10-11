@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI - Advanced ATS Resume System</title>
+    <!-- FontAwesome for Premium Tech Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="stars-bg"></div>
+    
+    <div class="container">
+        <!-- Branding Header -->
+        <header>
+            <div class="logo"><i class="fa-solid fa-microchip"></i> NEXUS<span>AI</span></div>
+            <h1>Smart ATS Resume Matrix</h1>
+            <p>Direct Browser Analytics Sandbox • Experience Zero-Installation Fluid Processing</p>
+        </header>
+
+        <!-- Premium Glass Card Layout -->
+        <div class="cyber-card">
+            <form onsubmit="executeClientAnalysis(event)">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-terminal"></i> Target Profile / Job Parameters</label>
+                    <textarea id="input-jd" placeholder="Paste target requirements metric parameters here..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-network-wired"></i> Upload Candidate Artifact (Resume)</label>
+                    <div class="upload-zone" id="drop-area" onclick="triggerFileBrowsing()">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <span class="upload-text">Drag and drop profile asset here or <b>browse directories</b></span>
+                        <input type="file" id="actual-file-input" accept=".pdf,.docx,.txt" onchange="processFileVisualAttachment(this)" hidden>
+                    </div>
+                    <div id="file-feedback-badge" class="file-status-tag" style="display: none;"></div>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Initialize Neural Computation
+                </button>
+            </form>
+        </div>
+
+        <!-- Matrix Processing Loader -->
+        <div class="loading-wrapper" id="pipeline-loader">
+            <div class="pulse-loader"></div>
+            <p>Simulating Internal AI Model Engine Framework Parsing...</p>
+        </div>
+
+        <!-- Multi-Feature Results Matrix Dashboard Layout -->
+        <div class="matrix-results" id="report-view-matrix">
+            <h2><i class="fa-solid fa-chart-line"></i> Compilation Analytics Overview</h2>
+            
+            <div class="dashboard-grid">
+                <!-- ATS Circle Progress Framework -->
+                <div class="cyber-card radial-widget">
+                    <label>ATS Compliance Index</label>
+                    <div class="circle-container" id="radial-gauge-circle">
+                        <span id="numeric-percentage-label">0%</span>
+                    </div>
+                </div>
+
+                <!-- System Vocabulary Deficits -->
+                <div class="cyber-card">
+                    <label><i class="fa-solid fa-circle-exclamation" style="color: var(--neon-pink);"></i> Core System Vocabulary Deficits</label>
+                    <ul class="tags-list negative" id="deficit-keywords-container">
+                        <!-- Dynamic content -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Strategic Optimizations -->
+            <div class="cyber-card">
+                <label><i class="fa-solid fa-lightbulb" style="color: #ffb703;"></i> Strategic Optimizations</label>
+                <div class="panel-box alert">
+                    <p id="dynamic-strategy-text">Analyzing profile criteria tags...</p>
+                </div>
+            </div>
+
+            <!-- Validated Strengths -->
+            <div class="cyber-card">
+                <label><i class="fa-solid fa-circle-check" style="color: var(--neon-green);"></i> Validated Strengths & Core Vectors</label>
+                <ul class="tags-list positive" id="validated-skills-container">
+                    <!-- Dynamic content -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
